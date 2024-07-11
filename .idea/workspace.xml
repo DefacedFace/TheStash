@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ef0d3f6d-52ac-4bb6-9176-e2dda70be432" name="Changes" comment="init bruv">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/NewPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/Views/NewPage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agenda.py" beforeDir="false" afterPath="$PROJECT_DIR$/agenda.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stash.json" beforeDir="false" afterPath="$PROJECT_DIR$/stash.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,15 +25,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "DefacedFace"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;DefacedFace&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
-    "url": "https://github.com/DefacedFace/TheStash",
+    "url": "https://github.com/DefacedFace/TheStash.git",
     "accountId": "612a20cb-92c7-4d24-9c87-635a33ca9982"
   }
 }]]></component>
@@ -62,7 +64,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/ericross/ChemStash/Themes",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -157,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720721963862</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="init bruv">
+      <option name="closed" value="true" />
+      <created>1720722504122</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1720722504122</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -169,17 +179,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Views/NewPage.py</url>
-          <line>245</line>
+          <line>295</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Views/NewPage.py</url>
-          <line>317</line>
+          <line>367</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Views/NewPage.py</url>
-          <line>384</line>
+          <line>434</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>

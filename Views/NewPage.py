@@ -10,7 +10,7 @@ from pint import UnitRegistry
 import os
 
 
-class NewPage(ctk.CTkFrame):
+class NewPage(ctk.CTkScrollableFrame):
     def __init__(self, parent, controller, calendar_view):
         super().__init__(parent)
         self.current_stash = None
@@ -32,6 +32,55 @@ class NewPage(ctk.CTkFrame):
 
         self.button_frame = ctk.CTkFrame(self, fg_color="transparent")
         self.button_frame.pack(side=ctk.BOTTOM, fill="x", pady=10)
+
+        self.reup_frame = ctk.CTkFrame(self.stash_frame, corner_radius=10)
+        self.reup_frame.pack(pady=10, padx=10, )
+
+        self.reup_title_label = ctk.CTkLabel(
+            self.reup_frame,
+            font=ctk.CTkFont(size=20),
+            text="Add to Stash",
+            anchor="n",
+        )
+        self.reup_title_label.pack(pady=5, padx=10, anchor="n")
+
+        self.reup_unit_label = ctk.CTkLabel(
+            self.reup_frame,
+            text="Unit",
+            font=ctk.CTkFont(size=13),
+            anchor="w",
+        )
+        self.reup_unit_label.pack(pady=5, padx=10, anchor="w")
+
+        self.reup_unit_menu = ctk.CTkOptionMenu(
+            self.reup_frame,
+            values=["grams", "milligrams", "micrograms", "pounds", "ounces"],
+        )
+        self.reup_unit_menu.pack(pady=5, padx=10, anchor="w", fill="x")
+
+        self.reup_unit_menu.set("grams")
+
+        self.Reup_amount_label = ctk.CTkLabel(
+            self.reup_frame,
+            text="Amount",
+            font=ctk.CTkFont(size=13),
+            anchor="w",
+        )
+        self.Reup_amount_label.pack(pady=5, padx=10, anchor="w")
+
+        self.Reup_amount = ctk.CTkEntry(
+            self.reup_frame,
+            placeholder_text="Enter Amount",
+            width=500,
+        )
+        self.Reup_amount.pack(pady=5, padx=10, anchor="w", fill="x")
+
+
+        self.Reup_button = ctk.CTkButton(
+            self.reup_frame, text="Update Stash",
+        )
+        self.Reup_button.pack(pady=5, padx=10, anchor="n")
+
 
         home_button = ctk.CTkButton(
             self.button_frame, text="Back", command=lambda: controller.stash_selector()
@@ -92,6 +141,9 @@ class NewPage(ctk.CTkFrame):
 
         for widget in self.stash_entry_frame.winfo_children():
             widget.destroy()
+        #
+        # for widget in self.Reup_frame.winfo_children():
+        #     widget.destroy()
 
         stash_amount = self.current_stash["stash_amount"]
         stash_unit = self.current_stash["stash_unit"]

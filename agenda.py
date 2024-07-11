@@ -1,3 +1,5 @@
+from typing import overload
+
 from tkcalendar import Calendar
 
 
@@ -120,6 +122,20 @@ class Agenda(Calendar):
                         [self.calevents[ev]["text"] for ev in ev_ids]
                     )
                     label.configure(text=text)
+
+    @overload
+    def grid_bbox(
+        self, column: None = None, row: None = None, col2: None = None, row2: None = None
+    ) -> tuple[int, int, int, int] | None: ...
+
+    @overload
+    def grid_bbox(self, column: int, row: int, col2: None = None, row2: None = None) -> tuple[int, int, int, int] | None: ...
+
+    @overload
+    def grid_bbox(self, column: int, row: int, col2: int, row2: int) -> tuple[int, int, int, int] | None: ...
+
+    def grid_bbox(self, column=None, row=None, col2=None, row2=None):
+        return super().grid_bbox(column, row, col2, row2)
 
     def _show_event(self, date):
         """Display events on date if visible."""
