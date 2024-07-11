@@ -5,25 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef0d3f6d-52ac-4bb6-9176-e2dda70be432" name="Changes" comment="init bruv">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/ChemStash.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DrugTypes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Themes/Blue.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/AddStashView.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/CalendarView.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/NewPage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/StashView.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/agenda.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cal_events.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datepicker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stash.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +23,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "DefacedFace"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/DefacedFace/TheStash",
+    "accountId": "612a20cb-92c7-4d24-9c87-635a33ca9982"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/DrugTypes.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Main.py" root0="SKIP_INSPECTION" />
@@ -146,7 +141,20 @@
       <option name="presentableId" value="Default" />
       <updated>1720322713006</updated>
     </task>
+    <task id="LOCAL-00001" summary="init bruv">
+      <option name="closed" value="true" />
+      <created>1720719980468</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1720719980468</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init bruv" />
+    <option name="LAST_COMMIT_MESSAGE" value="init bruv" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
