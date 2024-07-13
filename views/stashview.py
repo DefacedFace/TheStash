@@ -23,7 +23,7 @@ class StashView(ctk.CTkScrollableFrame):
         else:
             self.stash_data = []
         self.update_ui()
-        self.after(200, self.config_stash_data)
+        # self.after(200, self.config_stash_data)
 
     def update_ui(self):
         for widget in self.winfo_children():

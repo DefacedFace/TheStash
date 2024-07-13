@@ -1,0 +1,6 @@
+customtkinter~=5.2.2
+CTkMessagebox~=2.7
+CTkTable~=1.1
+tkcalendar~=1.6.1
+Pint~=0.24.1
+setuptools~=70.3.0

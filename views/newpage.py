@@ -5,17 +5,19 @@ from CTkTable import CTkTable
 from tkcalendar import DateEntry
 import datetime
 from datepicker import open_datepicker
-from Views.CalendarView import CalendarView
+from views.calendarview import CalendarView
+from views.stashview import StashView
 from pint import UnitRegistry
 import os
 
 
 class NewPage(ctk.CTkScrollableFrame):
-    def __init__(self, parent, controller, calendar_view):
+    def __init__(self, parent, controller, calendar_view, stash_view):
         super().__init__(parent)
         self.current_stash = None
         self.controller = controller
         self.calendar_view = calendar_view
+        self._stash_view = stash_view
         self.ureg = UnitRegistry()
 
         self.stash_frame = ctk.CTkFrame(self, corner_radius=10)
@@ -34,7 +36,10 @@ class NewPage(ctk.CTkScrollableFrame):
         self.button_frame.pack(side=ctk.BOTTOM, fill="x", pady=10)
 
         self.reup_frame = ctk.CTkFrame(self.stash_frame, corner_radius=10)
-        self.reup_frame.pack(pady=10, padx=10, )
+        self.reup_frame.pack(
+            pady=10,
+            padx=10,
+        )
 
         self.reup_title_label = ctk.CTkLabel(
             self.reup_frame,
@@ -75,12 +80,11 @@ class NewPage(ctk.CTkScrollableFrame):
         )
         self.Reup_amount.pack(pady=5, padx=10, anchor="w", fill="x")
 
-
         self.Reup_button = ctk.CTkButton(
-            self.reup_frame, text="Update Stash",
+            self.reup_frame,
+            text="Update Stash",
         )
         self.Reup_button.pack(pady=5, padx=10, anchor="n")
-
 
         home_button = ctk.CTkButton(
             self.button_frame, text="Back", command=lambda: controller.stash_selector()
@@ -124,6 +128,7 @@ class NewPage(ctk.CTkScrollableFrame):
 
                 except Exception as e:
                     print(f"Error deleting stash: {e}")
+                # self._stash_view.config_stash_data()
         else:
             return
 
@@ -168,7 +173,6 @@ class NewPage(ctk.CTkScrollableFrame):
                 stash_unit_display = stash_unit
         else:
             stash_unit_display = stash_unit
-
 
         if stash_unit_display == "grams":
             stash_amount_display = (
@@ -296,9 +300,7 @@ class NewPage(ctk.CTkScrollableFrame):
         self.add_entry_button.pack(pady=5, padx=10, anchor="n")
 
     def add_entry_event(self):
-        print("Create Entry button clicked")
         date_taken_str = self.entry.get()
-        print(f"Date taken: {date_taken_str}")
         try:
             dose_taken = datetime.datetime.strptime(date_taken_str, "%Y-%m-%d").date()
         except ValueError:
@@ -378,47 +380,9 @@ class NewPage(ctk.CTkScrollableFrame):
             cancel_button_color="transparent",
         )
         self.calendar_view.update_events()
-
         def open_datepicker(self):
             open_datepicker(self.entry)
 
-        def destroy_stash_event(self):
-            msg = CTkMessagebox(
-                title="Delete Stash?",
-                message="Are you sure you want to delete this stash?",
-                icon="warning",
-                option_1="No",
-                option_2="Yes",
-                cancel_button_color="transparent",
-                justify="center",
-            )
-            response = msg.get()
-
-            if response == "Yes":
-                if self.current_stash:
-                    try:
-                        file_path = "stash.json"
-                        if os.path.exists(file_path):
-                            with open(file_path, "r") as f:
-                                stash_data = json.load(f)
-
-                            for stash in stash_data:
-                                if (
-                                    stash["substance"]
-                                    == self.current_stash["substance"]
-                                ):
-                                    stash_data.remove(stash)
-                                    break
-
-                            with open(file_path, "w") as f:
-                                json.dump(stash_data, f, indent=4)
-
-                        self.controller.stash_selector()
-
-                    except Exception as e:
-                        print(f"Error deleting stash: {e}")
-            else:
-                return
 
     def amount_calculation(self, entered_amount_grams):
         # Load stash data from file
@@ -441,8 +405,6 @@ class NewPage(ctk.CTkScrollableFrame):
 
                 total_used = stash.get("total_used", 0)
                 new_total_used = total_used + entered_amount_grams
-
-
 
                 stash["stash_amount"] = new_stash_amount_grams
                 stash["total_used"] = new_total_used

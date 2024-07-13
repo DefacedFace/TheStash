@@ -125,14 +125,22 @@ class Agenda(Calendar):
 
     @overload
     def grid_bbox(
-        self, column: None = None, row: None = None, col2: None = None, row2: None = None
+        self,
+        column: None = None,
+        row: None = None,
+        col2: None = None,
+        row2: None = None,
     ) -> tuple[int, int, int, int] | None: ...
 
     @overload
-    def grid_bbox(self, column: int, row: int, col2: None = None, row2: None = None) -> tuple[int, int, int, int] | None: ...
+    def grid_bbox(
+        self, column: int, row: int, col2: None = None, row2: None = None
+    ) -> tuple[int, int, int, int] | None: ...
 
     @overload
-    def grid_bbox(self, column: int, row: int, col2: int, row2: int) -> tuple[int, int, int, int] | None: ...
+    def grid_bbox(
+        self, column: int, row: int, col2: int, row2: int
+    ) -> tuple[int, int, int, int] | None: ...
 
     def grid_bbox(self, column=None, row=None, col2=None, row2=None):
         return super().grid_bbox(column, row, col2, row2)

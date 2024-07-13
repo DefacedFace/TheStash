@@ -1,9 +1,65 @@
 [
     {
         "drug_class": "Stimulant",
+        "substance": "4-MMC",
+        "stash_unit": "grams",
+        "stash_amount": 8.0,
+        "source_cost": 0.0,
+        "total_used": 0.0
+    },
+    {
+        "drug_class": "Stimulant",
+        "substance": "2C-H",
+        "stash_unit": "grams",
+        "stash_amount": 9.0,
+        "source_cost": 0.0,
+        "total_used": 0.0
+    },
+    {
+        "drug_class": "Stimulant",
         "substance": "4F-MPH",
         "stash_unit": "grams",
-        "stash_amount": 23.0,
+        "stash_amount": 8.0,
+        "source_cost": 0.0,
+        "total_used": 0.0
+    },
+    {
+        "drug_class": "Stimulant",
+        "substance": "4-FMA",
+        "stash_unit": "grams",
+        "stash_amount": 89.0,
+        "source_cost": 0.0,
+        "total_used": 0.0
+    },
+    {
+        "drug_class": "Stimulant",
+        "substance": "A-PVP",
+        "stash_unit": "grams",
+        "stash_amount": 8.0,
+        "source_cost": 0.0,
+        "total_used": 0.0
+    },
+    {
+        "drug_class": "Psychedelic",
+        "substance": "LSD-25",
+        "stash_unit": "grams",
+        "stash_amount": 2.0,
+        "source_cost": 0.0,
+        "total_used": 0.0
+    },
+    {
+        "drug_class": "Empathogen",
+        "substance": "MDMA",
+        "stash_unit": "grams",
+        "stash_amount": 3.0,
+        "source_cost": 0.0,
+        "total_used": 0.0
+    },
+    {
+        "drug_class": "Stimulant",
+        "substance": "4-FA",
+        "stash_unit": "grams",
+        "stash_amount": 2.0,
         "source_cost": 0.0,
         "total_used": 0.0
     }

@@ -1,25 +1,35 @@
 import customtkinter as ctk
 import webbrowser
-from Views.StashView import StashView
-from Views.CalendarView import CalendarView
-from Views.AddStashView import AddStashView
-from Views.NewPage import NewPage
+from views.stashview import StashView
+from views.calendarview import CalendarView
+from views.addstashview import AddStashView
+from views.newpage import NewPage
+from views.notesview import NotesView
 
 ctk.set_appearance_mode("dark")
-ctk.set_default_color_theme("Themes/Blue.json")
+ctk.set_default_color_theme("themes/Blue.json")
 
 
 class App(ctk.CTk):
-    frames = {"stash": None, "calendar": None, "add_stash": None, "new_page": None}
+    frames = {
+        "stash": None,
+        "calendar": None,
+        "add_stash": None,
+        "new_page": None,
+        "notes": None,
+    }
 
     def stash_selector(self):
         self.hide_all_frames()
+        self.frames["stash"].config_stash_data()
         App.frames["stash"].pack(
             in_=self.right_side_container,
             side=ctk.TOP,
             fill=ctk.BOTH,
             expand=True,
         )
+
+
 
     def calendar_selector(self):
         self.hide_all_frames()
@@ -50,6 +60,15 @@ class App(ctk.CTk):
         )
         new_page_frame.update_data(stash)
 
+    def Notes_selector(self):
+        self.hide_all_frames()
+        App.frames["notes"].pack(
+            in_=self.right_side_container,
+            side=ctk.TOP,
+            fill=ctk.BOTH,
+            expand=True,
+        )
+
     def hide_all_frames(self):
         for frame in self.frames.values():
             if frame is not None:
@@ -78,7 +97,8 @@ class App(ctk.CTk):
         left_side_panel.grid_rowconfigure(1, weight=0)
         left_side_panel.grid_rowconfigure(2, weight=0)
         left_side_panel.grid_rowconfigure(3, weight=0)
-        left_side_panel.grid_rowconfigure(4, weight=1)
+        left_side_panel.grid_rowconfigure(4, weight=0)
+        left_side_panel.grid_rowconfigure(5, weight=1)
 
         self.logo_label = ctk.CTkLabel(
             left_side_panel, text="ChemStash", font=ctk.CTkFont(size=20, weight="bold")
@@ -95,6 +115,10 @@ class App(ctk.CTk):
         )
         self.calendar_button.grid(row=2, column=0, padx=20, pady=(20, 10))
 
+        self.Notes_button = ctk.CTkButton(
+            left_side_panel, text="Notes", command=self.Notes_selector
+        )
+
         self.add_stash_button = ctk.CTkButton(
             left_side_panel, text="Add Stash", command=self.add_stash_slider
         )
@@ -103,7 +127,10 @@ class App(ctk.CTk):
         self.psychonaut_button = ctk.CTkButton(
             left_side_panel, text="PsychonautWiki", command=self.psychonaut_button_event
         )
-        self.psychonaut_button.grid(row=4, column=0, padx=20, pady=(20, 10), sticky="s")
+
+        self.Notes_button.grid(row=4, column=0, padx=20, pady=(20, 10))
+
+        self.psychonaut_button.grid(row=5, column=0, padx=20, pady=(20, 10), sticky="s")
 
         self.right_side_panel = ctk.CTkFrame(main_container)
         self.right_side_panel.pack(
@@ -122,10 +149,13 @@ class App(ctk.CTk):
         # Create the frames
         self.frames["stash"] = StashView(self.right_side_container, self)
         self.frames["calendar"] = CalendarView(self.right_side_container)
-        self.frames["add_stash"] = AddStashView(self.right_side_container)
+        self.frames["add_stash"] = AddStashView(self.right_side_container, self)
         self.frames["new_page"] = NewPage(
-            self.right_side_container, self, self.frames["calendar"]
+            self.right_side_container, self, self.frames["calendar"], self.frames["stash"]
         )
+        self.frames["notes"] = NotesView(self.right_side_container)
+
+        self._stash_view = self.frames["stash"]
 
         # Start on the Stash page
         self.stash_selector()

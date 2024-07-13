@@ -1,1 +1,44 @@
-[]
+[
+    {
+        "substance": "4-FMA",
+        "amount": 1.0,
+        "unit": "grams",
+        "taken_at": "2024-07-13"
+    },
+    {
+        "substance": "A-PVP",
+        "amount": 2.0,
+        "unit": "grams",
+        "taken_at": "2024-07-13"
+    },
+    {
+        "substance": "A-PVP",
+        "amount": 1.0,
+        "unit": "grams",
+        "taken_at": "2024-07-13"
+    },
+    {
+        "substance": "5-MeO-MiPT",
+        "amount": 1.0,
+        "unit": "grams",
+        "taken_at": "2024-07-13"
+    },
+    {
+        "substance": "5-MeO-MiPT",
+        "amount": 7.0,
+        "unit": "grams",
+        "taken_at": "2024-07-13"
+    },
+    {
+        "substance": "A-PVP",
+        "amount": 1.0,
+        "unit": "grams",
+        "taken_at": "2024-07-13"
+    },
+    {
+        "substance": "5-MeO-MiPT",
+        "amount": 1.0,
+        "unit": "grams",
+        "taken_at": "2024-07-13"
+    }
+]

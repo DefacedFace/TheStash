@@ -1,9 +1,6 @@
-subTypes = {
+drugtypes = {
     "Stimulant": [
         "4F-MPH",
-        "Adderal",
-        "Meth",
-        "Caffeine",
         "3-MMC",
         "4-MMC",
         "2-FEA",
@@ -22,7 +19,7 @@ subTypes = {
         "5-MeO-MiPT",
     ],
     "Psychedelic": [
-        "LSD",
+        "LSD-25",
         "1P-LSD",
         "Mushroom",
         "4-ACO-DMT",
@@ -53,10 +50,10 @@ subTypes = {
         "Etazene",
         "Etonitazepipne",
         "Metazene",
-        "Codeine",
-        "Morphine",
+        "Protonitazene"
         "Oxycodone",
         "Hydrocodone",
+        "Metonitazene"
     ],
     "Depressant": [
         "Xanax",
@@ -68,7 +65,7 @@ subTypes = {
         "Klonopin",
         "BDO",
     ],
-    "Dissociative": ["2F-DCK", "DCK", "FXE", "3-HO-PCP", "3-MEO-PCP", "MXE"],
+    "Dissociative": ["2F-DCK", "DCK", "FXE", "3-HO-PCP", "3-MEO-PCP", "MXE", "O-PCE"],
     "Empathogen": ["MDMA", "5-MAPB", "6-APB"],
     "Deliriant": ["Salvia"],
 }

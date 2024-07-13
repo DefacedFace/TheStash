@@ -1,5 +1,5 @@
 import customtkinter as ctk
-from DrugTypes import subTypes
+from drugtypes import drugtypes
 from pint import UnitRegistry
 import json
 import os
@@ -8,8 +8,9 @@ from CTkMessagebox import CTkMessagebox
 
 
 class AddStashView(ctk.CTkFrame):
-    def __init__(self, parent):
+    def __init__(self, parent, controller):
         super().__init__(parent)
+        self.controller = controller
 
         self.ureg = UnitRegistry()
 
@@ -26,16 +27,16 @@ class AddStashView(ctk.CTkFrame):
 
         def optionmenu_callback(choice):
             # Update the substance dropdown based on selected drug class
-            substance_optionmenu.configure(values=subTypes[choice])
-            substance_optionmenu.set(subTypes[choice][0])
+            substance_optionmenu.configure(values=drugtypes[choice])
+            substance_optionmenu.set(drugtypes[choice][0])
 
-        selected_drug_class = ctk.StringVar(value=list(subTypes.keys())[0])
+        selected_drug_class = ctk.StringVar(value=list(drugtypes.keys())[0])
 
         # 1st dropdown menu (Drug Class)
         drug_class_optionmenu = ctk.CTkOptionMenu(
             drug_class_frame,
             variable=selected_drug_class,
-            values=list(subTypes.keys()),
+            values=list(drugtypes.keys()),
             command=optionmenu_callback,
         )
         drug_class_optionmenu.pack(padx=20, pady=10, anchor="n")
@@ -48,18 +49,18 @@ class AddStashView(ctk.CTkFrame):
         )
         Substance_label.pack(padx=20, pady=10, anchor="n")
 
-        selected_substance = ctk.StringVar(value=subTypes[list(subTypes.keys())[0]][0])
+        selected_substance = ctk.StringVar(value=drugtypes[list(drugtypes.keys())[0]][0])
 
         # 2nd dropdown menu (Substance)
         substance_optionmenu = ctk.CTkOptionMenu(
             substance_frame,
             variable=selected_substance,
-            values=subTypes[list(subTypes.keys())[0]],
+            values=drugtypes[list(drugtypes.keys())[0]],
         )
         substance_optionmenu.pack(padx=20, pady=10, anchor="n")
 
         # Initialize the substance dropdown based on the initial drug class selection
-        optionmenu_callback(list(subTypes.keys())[0])
+        optionmenu_callback(list(drugtypes.keys())[0])
 
         stashAmount_frame = ctk.CTkFrame(frame)
         stashAmount_frame.pack(padx=100, pady=(20, 10), fill="x")
@@ -185,6 +186,7 @@ class AddStashView(ctk.CTkFrame):
 
             source_entry.delete(0, ctk.END)
             self.stashAmount_entry.delete(0, ctk.END)
+            self.controller.stash_selector()
 
             CTkMessagebox(
                 title="Success",
