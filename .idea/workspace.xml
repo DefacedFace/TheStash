@@ -7,11 +7,8 @@
     <list default="true" id="ef0d3f6d-52ac-4bb6-9176-e2dda70be432" name="Changes" comment="init bruv">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cal_events.json" beforeDir="false" afterPath="$PROJECT_DIR$/cal_events.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drugtypes.py" beforeDir="false" afterPath="$PROJECT_DIR$/drugtypes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/addstashview.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/addstashview.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/newpage.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/newpage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/notesview.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/notesview.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/stashview.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/stashview.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -64,8 +64,10 @@ class StashView(ctk.CTkScrollableFrame):
                 drug_class_label.place(relx=1.0, rely=0, anchor="ne", x=-70, y=5)
 
                 # Convert the amount back to the original unit for display
-                stash_amount_quantity = self.ureg.Quantity(stash['stash_amount'], "grams")
-                stash_amount_converted = stash_amount_quantity.to(stash['stash_unit'])
+                stash_amount_quantity = self.ureg.Quantity(
+                    stash["stash_amount"], "grams"
+                )
+                stash_amount_converted = stash_amount_quantity.to(stash["stash_unit"])
                 amount = f"{stash_amount_converted.magnitude:.2f}"
 
                 amount_label = ctk.CTkLabel(

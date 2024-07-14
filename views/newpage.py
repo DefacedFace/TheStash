@@ -380,9 +380,9 @@ class NewPage(ctk.CTkScrollableFrame):
             cancel_button_color="transparent",
         )
         self.calendar_view.update_events()
+
         def open_datepicker(self):
             open_datepicker(self.entry)
-
 
     def amount_calculation(self, entered_amount_grams):
         # Load stash data from file

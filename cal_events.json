@@ -52,5 +52,17 @@
         "amount": 2.2e-05,
         "unit": "grams",
         "taken_at": "2024-07-13"
+    },
+    {
+        "substance": "4F-MPH",
+        "amount": 23.0,
+        "unit": "grams",
+        "taken_at": "2024-07-13"
+    },
+    {
+        "substance": "3-FA",
+        "amount": 0.000222,
+        "unit": "grams",
+        "taken_at": "2024-07-13"
     }
 ]

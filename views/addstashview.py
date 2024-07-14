@@ -1,4 +1,3 @@
-
 import customtkinter as ctk
 from drugtypes import drugtypes
 from pint import UnitRegistry
@@ -50,7 +49,9 @@ class AddStashView(ctk.CTkFrame):
         )
         Substance_label.pack(padx=20, pady=10, anchor="n")
 
-        selected_substance = ctk.StringVar(value=drugtypes[list(drugtypes.keys())[0]][0])
+        selected_substance = ctk.StringVar(
+            value=drugtypes[list(drugtypes.keys())[0]][0]
+        )
 
         # 2nd dropdown menu (Substance)
         substance_optionmenu = ctk.CTkOptionMenu(
@@ -214,6 +215,7 @@ class AddStashView(ctk.CTkFrame):
             self.after(100, check_entry_state)
 
         check_entry_state()
+
 
 import customtkinter as ctk
 import os
