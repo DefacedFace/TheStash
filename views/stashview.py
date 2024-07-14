@@ -2,12 +2,14 @@ import customtkinter as ctk
 import os
 import json
 from functools import partial
+from pint import UnitRegistry
 
 
 class StashView(ctk.CTkScrollableFrame):
     def __init__(self, parent, controller):
         super().__init__(parent)
         self.controller = controller
+        self.ureg = UnitRegistry()
         self.stash_data = []
         self.config_stash_data()
 
@@ -23,7 +25,6 @@ class StashView(ctk.CTkScrollableFrame):
         else:
             self.stash_data = []
         self.update_ui()
-        # self.after(200, self.config_stash_data)
 
     def update_ui(self):
         for widget in self.winfo_children():
@@ -62,7 +63,10 @@ class StashView(ctk.CTkScrollableFrame):
                 )
                 drug_class_label.place(relx=1.0, rely=0, anchor="ne", x=-70, y=5)
 
-                amount = f"{float(stash['stash_amount']):.2f}"
+                # Convert the amount back to the original unit for display
+                stash_amount_quantity = self.ureg.Quantity(stash['stash_amount'], "grams")
+                stash_amount_converted = stash_amount_quantity.to(stash['stash_unit'])
+                amount = f"{stash_amount_converted.magnitude:.2f}"
 
                 amount_label = ctk.CTkLabel(
                     drug_frame,

@@ -40,5 +40,17 @@
         "amount": 1.0,
         "unit": "grams",
         "taken_at": "2024-07-13"
+    },
+    {
+        "substance": "LSD-25",
+        "amount": 1.9999999999999998e-05,
+        "unit": "grams",
+        "taken_at": "2024-07-13"
+    },
+    {
+        "substance": "LSD-25",
+        "amount": 2.2e-05,
+        "unit": "grams",
+        "taken_at": "2024-07-13"
     }
 ]

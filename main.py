@@ -7,7 +7,7 @@ from views.newpage import NewPage
 from views.notesview import NotesView
 
 ctk.set_appearance_mode("dark")
-ctk.set_default_color_theme("themes/Blue.json")
+ctk.set_default_color_theme("themes/blue.json")
 
 
 class App(ctk.CTk):
@@ -28,8 +28,6 @@ class App(ctk.CTk):
             fill=ctk.BOTH,
             expand=True,
         )
-
-
 
     def calendar_selector(self):
         self.hide_all_frames()
@@ -149,13 +147,19 @@ class App(ctk.CTk):
         # Create the frames
         self.frames["stash"] = StashView(self.right_side_container, self)
         self.frames["calendar"] = CalendarView(self.right_side_container)
-        self.frames["add_stash"] = AddStashView(self.right_side_container, self)
+        self.frames["add_stash"] = AddStashView(
+            self.right_side_container, self
+        )  # Pass self as controller
         self.frames["new_page"] = NewPage(
-            self.right_side_container, self, self.frames["calendar"], self.frames["stash"]
+            self.right_side_container,
+            self,
+            self.frames["calendar"],
+            self.frames["stash"],
         )
         self.frames["notes"] = NotesView(self.right_side_container)
 
         self._stash_view = self.frames["stash"]
+        self._add_stash_view = self.frames["add_stash"]
 
         # Start on the Stash page
         self.stash_selector()

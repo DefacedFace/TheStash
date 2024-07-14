@@ -8,7 +8,6 @@ class NotesView(ctk.CTkFrame):
         super().__init__(parent)
 
         if os.path.exists("notes.json") and os.path.getsize("notes.json") > 0:
-            print("Loading notes...")
             with open("notes.json", "r") as f:
                 self.notes = json.load(f)
         else:

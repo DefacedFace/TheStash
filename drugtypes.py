@@ -50,10 +50,9 @@ drugtypes = {
         "Etazene",
         "Etonitazepipne",
         "Metazene",
-        "Protonitazene"
-        "Oxycodone",
+        "Protonitazene" "Oxycodone",
         "Hydrocodone",
-        "Metonitazene"
+        "Metonitazene",
     ],
     "Depressant": [
         "Xanax",
